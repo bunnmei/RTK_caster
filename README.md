@@ -80,8 +80,26 @@ $ ssh -T git@github.com
 秘密鍵: ~/.ssh/id_ed25519 （絶対に誰にも見せないでください）
 公開鍵: ~/.ssh/id_ed25519.pub （GitHubやVPSに登録します）
 
-### ssh -T git@github.com
+### pm2などでnodeを起動
 
+```cmd
+# 1. pm2のインストール
+npm install -g pm2
+
+# 2. caster.js をバックグラウンドで起動
+pm2 start caster.js --name ntrip-caster
+
+状況確認
+pm2 status
+
+logが流れるようにする
+pm2 logs
+
+# 以下で止めることができる
+pm2 stop アプリ名
+# または
+pm2 stop ID番号
+```
 
 
 
