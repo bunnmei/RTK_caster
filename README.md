@@ -53,6 +53,7 @@ $ node -v
 $ npm -v
 ```
 ### ファイヤーウォールを開く(XServerはパケットフィルターも設定)
+2101はRTCMを流すポート
 ```cmd
 # SSH(22番)を許可（締め出し防止）
 $ sudo ufw allow 22/tcp
@@ -66,6 +67,21 @@ $ sudo ufw status
 ```
 ### gitの設定など
 ```cmd
-
+$ ssh-keygen -t ed25519 -C "あなたのメールアドレス"
+$ cat ~/.ssh/id_ed25519.pub
 ```
+.pubをgithubに貼り付ける
+
+疎通確認
+```cmd
+$ ssh -T git@github.com
+```
+
+秘密鍵: ~/.ssh/id_ed25519 （絶対に誰にも見せないでください）
+公開鍵: ~/.ssh/id_ed25519.pub （GitHubやVPSに登録します）
+
+### ssh -T git@github.com
+
+
+
 
